@@ -1,0 +1,38 @@
+Archivo HTML (incluido como medio/recurso: javascriptWebViewProcessor.html)
+<!doctype html>
+<cabeza>
+Procesador de Javascript de WebView
+</cabeza>
+
+<body onload="procesoJavascript();">
+<b>Esta página incluye una función de JavaScript que invierte el texto.</b>
+<p>La función javascript incorpora una característica especial de App Inventor llamada
+<i>window.AppInventor.getWebViewString()</i>, que permite que las aplicaciones de App
+
+Inventor se comuniquen con el procesamiento interno de javascript del componente
+WebViewer.
+<p>Este ejemplo simple muestra cómo utilizar la función
+<i>window.AppInventor.getWebViewString()</i> para pasar datos hacia y desde el
+componente WebViewer y, por lo tanto, a una aplicación App Inventor.
+
+<guión>
+var resultado = nueva Fecha().toString();
+var appInventorInput = ventana.AppInventor.getWebViewString() ;
+función procesoJavascript() {
+si (appInventorInput.length > 0) {
+document.write("WebView InputString recibido DE la aplicación:
+" + appInventorInput );
+resultado = appInventorInput.split("").reverse().join("");
+document.write( "<p/>WebView InputString enviando DE VUELTA A la
+aplicación:<br/>" +
+resultado );
+} demás {
+document.write( "La aplicación no ha establecido ninguna cadena de entrada
+WebView en: <br/>" + result );
+}
+ventana.AppInventor.setWebViewString( resultado ) ;
+}
+</script>
+
+</cuerpo>
+</html>
